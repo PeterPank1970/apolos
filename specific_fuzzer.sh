@@ -101,8 +101,8 @@ fuzz_files() {
         echo -e "${YELLOW}[*] Procesando archivo: $file${NC}"
         
         # Verificar si el archivo existe
-        if [ ! -f ".$file" ]; then
-            echo -e "${RED}[-] Archivo no encontrado: .$file${NC}" | tee -a "$OUTPUT"
+        if [ ! -f "$file" ]; then
+            echo -e "${RED}[-] Archivo no encontrado: $file${NC}" | tee -a "$OUTPUT"
             continue
         fi
         
