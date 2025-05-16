@@ -1,0 +1,13 @@
+token
+auth
+key
+secret
+payload
+algorithm
+loader
+autoload
+namespace
+classmap
+require
+version
+package
