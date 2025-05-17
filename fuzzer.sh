@@ -143,11 +143,7 @@ test_parameter() {
 
 # Calcular total de tests
 calculate_total_tests() {
-  local file_count=0
-  for file in "${TARGET_FILES[@]}"; do
-    [ -f "$file" ] && ((file_count++))
-  done
-  TOTAL_TESTS=$(( file_count * $(wc -l < "$WORDLIST") ))
+  TOTAL_TESTS=$(( ${#TARGET_FILES[@]} * $(wc -l < "$WORDLIST") ))
 }
 
 # Función principal
@@ -172,7 +168,6 @@ main() {
     [ -z "$param_clean" ] && continue
     
     for file in "${TARGET_FILES[@]}"; do
-      [ -f "$file" ] || continue
       test_parameter "$file" "$param_clean"
     done
   done < "$WORDLIST"
